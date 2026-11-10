@@ -1,0 +1,75 @@
+=========================================================
+Dataset        : 500MB
+Tables         : 4
+Rows/Table     : 650000
+shared_buffers : 256MB
+Threads        : 64
+Timestamp      : Fri May  1 06:10:24 PM IST 2026
+=========================================================
+
+==== SYSBENCH ====
+
+sysbench 1.1.0-3ceba0b (using bundled LuaJIT 2.1.0-beta3)
+
+Running the test with following options:
+Number of threads: 64
+Warmup time: 30s
+Initializing random number generator from current time
+
+
+Initializing worker threads...
+
+Threads started!
+
+Warming up for 30 seconds...
+
+
+==== PERF ====
+
+
+ Performance counter stats for process id '225006,225007,225008,225010,225011,225012,225779,225791,225805,225807,225811,225814,225817,225829,225831,225832,225833,225834,225835,225836,225837,225838,225839,225840,225841,225842,225843,225844,225845,225846,225847,225848,225849,225850,225851,225852,225853,225854,225855,225856,225857,225858,225859,225860,225861,225862,225863,225864,225865,225866,225867,225868,225869,225870,225871,225872,225873,225874,225875,225876,225877,225878,225879,225880,225881,225882,225883,225884,225885,225886':
+
+     4,630,208,433      dTLB-loads                                                              (71.43%)
+     1,177,302,505      dTLB-load-misses                 #   25.43% of all dTLB cache accesses  (71.54%)
+     1,979,404,410      iTLB-load                                                               (71.48%)
+     1,778,343,134      iTLB-load-misses                 #   89.84% of all iTLB cache accesses  (71.38%)
+ 1,258,731,353,474      cycles                                                                  (71.41%)
+   491,822,652,995      instructions                     #    0.39  insn per cycle              (71.43%)
+    26,877,387,223      cache-misses                                                            (71.34%)
+
+      50.052185472 seconds time elapsed
+
+SQL statistics:
+    queries performed:
+        read:                            9065362
+        write:                           0
+        other:                           0
+        total:                           9065362
+    transactions:                        9065362 (100709.54 per sec.)
+    queries:                             9065362 (100709.54 per sec.)
+    ignored errors:                      0      (0.00 per sec.)
+    reconnects:                          0      (0.00 per sec.)
+
+Throughput:
+    events/s (eps):                      100709.5366
+    time elapsed:                        90.0153s
+    total number of events:              9065362
+
+Latency (ms):
+         min:                                    0.11
+         avg:                                    0.63
+         max:                                   33.68
+         95th percentile:                        1.23
+         sum:                              5722344.85
+
+Threads fairness:
+    events (avg/stddev):           141644.3750/3166.76
+    execution time (avg/stddev):   89.4116/0.01
+
+
+================ SUMMARY ================
+TPS          : N/A
+dTLB miss %  : 25.43
+iTLB miss %  : 89.84
+IPC          : N/A
+========================================

@@ -1,0 +1,75 @@
+=========================================================
+Dataset        : 4GB
+Tables         : 4
+Rows/Table     : 2600000
+shared_buffers : 1GB
+Threads        : 16
+Timestamp      : Fri May  1 07:51:41 PM IST 2026
+=========================================================
+
+==== SYSBENCH ====
+
+sysbench 1.1.0-3ceba0b (using bundled LuaJIT 2.1.0-beta3)
+
+Running the test with following options:
+Number of threads: 16
+Warmup time: 30s
+Initializing random number generator from current time
+
+
+Initializing worker threads...
+
+Threads started!
+
+Warming up for 30 seconds...
+
+
+==== PERF ====
+
+
+ Performance counter stats for process id '249851,249852,249853,249855,249856,249857,250248,250249,250250,250251,250252,250253,250254,250255,250256,250257,250258,250259,250260,250261,250262,250263':
+
+     4,682,402,033      dTLB-loads                                                              (71.43%)
+     1,042,541,294      dTLB-load-misses                 #   22.27% of all dTLB cache accesses  (71.47%)
+     2,165,266,033      iTLB-load                                                               (71.44%)
+     1,905,109,434      iTLB-load-misses                 #   87.99% of all iTLB cache accesses  (71.42%)
+ 1,286,014,611,543      cycles                                                                  (71.41%)
+   517,490,942,254      instructions                     #    0.40  insn per cycle              (71.41%)
+    25,979,254,709      cache-misses                                                            (71.42%)
+
+      50.051094378 seconds time elapsed
+
+SQL statistics:
+    queries performed:
+        read:                            9515325
+        write:                           0
+        other:                           0
+        total:                           9515325
+    transactions:                        9515325 (105718.06 per sec.)
+    queries:                             9515325 (105718.06 per sec.)
+    ignored errors:                      0      (0.00 per sec.)
+    reconnects:                          0      (0.00 per sec.)
+
+Throughput:
+    events/s (eps):                      105718.0581
+    time elapsed:                        90.0068s
+    total number of events:              9515325
+
+Latency (ms):
+         min:                                    0.10
+         avg:                                    0.15
+         max:                                    8.16
+         95th percentile:                        0.18
+         sum:                              1400497.82
+
+Threads fairness:
+    events (avg/stddev):           594699.6875/1750.72
+    execution time (avg/stddev):   87.5311/0.01
+
+
+================ SUMMARY ================
+TPS          : N/A
+dTLB miss %  : 22.27
+iTLB miss %  : 87.99
+IPC          : N/A
+========================================
